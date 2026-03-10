@@ -1,18 +1,17 @@
 export default function NotesList({ notes, activeId, onSelect, onCreate, onDelete }) {
   function formatDate(ts) {
-    const d = new Date(ts);
-    return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+    return new Date(ts).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
   }
 
   return (
     <aside className="notes-list">
       <div className="notes-list-header">
-        <span className="notes-list-title">Notes</span>
-        <button className="btn-icon" onClick={onCreate} title="New note">+</button>
+        <span className="notes-list-title">Scrolls</span>
+        <button className="btn-new" onClick={onCreate} title="New note">+</button>
       </div>
       <div className="notes-list-items">
         {notes.length === 0 && (
-          <div className="notes-empty">No notes yet.<br />Click + to create one.</div>
+          <div className="notes-empty">No scrolls yet.<br />Create your first one.</div>
         )}
         {notes.map(note => (
           <div
