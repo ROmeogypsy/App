@@ -32,7 +32,7 @@ import json
 import re
 import time
 import socket
-from datetime import datetime
+from datetime import datetime, timezone
 from urllib.request import urlopen, Request
 from urllib.error import URLError, HTTPError
 from urllib.parse import urlparse, urljoin
@@ -122,7 +122,7 @@ def probe(url: str, method: str = "GET", data: bytes = None,
     result = {
         "url": url, "method": method,
         "status": None, "headers": {}, "body_snippet": "",
-        "duration_ms": 0, "error": None, "timestamp": datetime.utcnow().isoformat(),
+        "duration_ms": 0, "error": None, "timestamp": datetime.now(timezone.utc).isoformat(),
     }
     try:
         req = Request(url, data=data, headers=headers, method=method)
@@ -297,7 +297,7 @@ def save_report(out_dir: Path, target_url: str, path_results: list,
     evidence = {
         "tool":     "termux-assess.py",
         "target":   target_url,
-        "timestamp": datetime.utcnow().isoformat(),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
         "url_enum": path_results,
         "header_findings": header_findings,
         "cors_findings":   cors_findings,
@@ -390,7 +390,7 @@ footer{{text-align:center;color:#94a3b8;font-size:11px;margin-top:32px;padding:1
   <h1>Security Assessment Report</h1>
   <div class="sub">
     Target: <strong>{esc(target_url)}</strong><br>
-    Generated: {esc(datetime.utcnow().isoformat())} UTC<br>
+    Generated: {esc(datetime.now(timezone.utc).isoformat())} UTC<br>
     Tool: termux-assess.py &nbsp;|&nbsp; <strong>CONFIDENTIAL — AUTHORISED USE ONLY</strong>
   </div>
 </header>
@@ -425,7 +425,7 @@ footer{{text-align:center;color:#94a3b8;font-size:11px;margin-top:32px;padding:1
 report.html    — this report
 Directory: {esc(str(out_dir))}</div>
 </div>
-<footer>termux-assess.py &nbsp;|&nbsp; {esc(target_url)} &nbsp;|&nbsp; {esc(datetime.utcnow().isoformat())} UTC</footer>
+<footer>termux-assess.py &nbsp;|&nbsp; {esc(target_url)} &nbsp;|&nbsp; {esc(datetime.now(timezone.utc).isoformat())} UTC</footer>
 </div></body></html>"""
 
     report_path = out_dir / "report.html"
@@ -441,7 +441,7 @@ def run_assessment(target_url: str):
     base = f"{parsed.scheme}://{parsed.netloc}"
 
     safe_host = re.sub(r"[^\w.-]", "_", parsed.netloc)
-    ts        = datetime.utcnow().strftime("%Y%m%d-%H%M%S")
+    ts        = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
     out_dir   = Path(__file__).parent / "results" / f"{safe_host}-{ts}"
 
     print(f"\n{BLD}{'─'*60}{R}")
