@@ -25,3 +25,4 @@ dist-ssr
 
 # Security assessment runtime output
 security/results/
+security/__pycache__/
