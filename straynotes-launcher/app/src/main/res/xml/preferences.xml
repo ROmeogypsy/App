@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Grid">
+
+        <ListPreference
+            android:key="pref_grid_columns"
+            android:title="@string/pref_grid_columns_title"
+            android:entries="@array/grid_columns_entries"
+            android:entryValues="@array/grid_columns_values"
+            android:defaultValue="4"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Icons">
+
+        <ListPreference
+            android:key="pref_icon_size"
+            android:title="@string/pref_icon_size_title"
+            android:entries="@array/icon_size_entries"
+            android:entryValues="@array/icon_size_values"
+            android:defaultValue="56"
+            app:useSimpleSummaryProvider="true" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_show_labels"
+            android:title="@string/pref_show_labels_title"
+            android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Gestures">
+
+        <SwitchPreferenceCompat
+            android:key="pref_double_tap_lock"
+            android:title="@string/pref_double_tap_lock_title"
+            android:summary="@string/pref_double_tap_lock_summary"
+            android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

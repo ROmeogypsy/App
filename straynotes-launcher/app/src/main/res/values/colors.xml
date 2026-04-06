@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bg_void">#080808</color>
+    <color name="bg_surface">#121212</color>
+    <color name="bg_elevated">#1A1A1A</color>
+    <color name="red_accent">#D4000F</color>
+    <color name="red_dim">#7A000A</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_60">#99FFFFFF</color>
+    <color name="white_30">#4DFFFFFF</color>
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#99FFFFFF</color>
+    <color name="text_disabled">#4DFFFFFF</color>
+    <color name="drawer_bg">#E6080808</color>
+    <color name="shortcut_bg">#F0111111</color>
+    <color name="divider">#1AFFFFFF</color>
+</resources>
