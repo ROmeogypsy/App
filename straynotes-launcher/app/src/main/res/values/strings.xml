@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SD Launcher</string>
+    <string name="settings_title">Launcher Settings</string>
+    <string name="drawer_search_hint">Search apps…</string>
+    <string name="device_admin_explanation">Required for double-tap to lock screen.</string>
+
+    <!-- Settings -->
+    <string name="pref_grid_columns_title">Grid columns</string>
+    <string name="pref_grid_rows_title">Grid rows</string>
+    <string name="pref_icon_size_title">Icon size</string>
+    <string name="pref_show_labels_title">Show app labels</string>
+    <string name="pref_double_tap_lock_title">Double-tap to lock</string>
+    <string name="pref_double_tap_lock_summary">Requires Device Admin permission</string>
+
+    <string-array name="grid_columns_entries">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="grid_columns_values">
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="icon_size_entries">
+        <item>Small (44dp)</item>
+        <item>Medium (56dp)</item>
+        <item>Large (64dp)</item>
+    </string-array>
+    <string-array name="icon_size_values">
+        <item>44</item>
+        <item>56</item>
+        <item>64</item>
+    </string-array>
+</resources>
