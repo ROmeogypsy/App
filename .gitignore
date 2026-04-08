@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Security assessment runtime output
+security/results/
+security/__pycache__/
