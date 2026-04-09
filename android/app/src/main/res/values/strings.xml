@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">SD Media</string>
+    <string name="title_activity_main">SD Media</string>
+    <string name="package_name">com.sdmedia.kennel</string>
+    <string name="custom_url_scheme">com.sdmedia.kennel</string>
+</resources>
